@@ -1,0 +1,25 @@
+package Exercises;
+
+import java.util.List;
+
+public class Exercise_004 {
+
+	public static void main(String[] args) {
+
+		List<Integer> numbers = List.of(12,1, 4, 2, 7, 9, 3, 10, 77);
+		// Square every number in a list and find the sum of squares
+		System.out.println("Square every number in a list and find the sum of squares");
+		int sum = addListFunctional(numbers);
+		System.out.println(sum);
+	}
+
+	public static int sum(int a, int b) {
+		System.out.println(a+" "+b);
+		return a + b;
+	}
+	
+	public static int addListFunctional(List<Integer> numbers) {
+		return numbers.stream().reduce(0, Integer::sum);
+	}
+
+}

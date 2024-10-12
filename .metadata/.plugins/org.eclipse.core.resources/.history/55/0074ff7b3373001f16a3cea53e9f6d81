@@ -1,0 +1,33 @@
+package com.java.practice;
+
+import java.util.ArrayList;
+
+public class Practice {
+
+	 public static void main(String[] args) {
+	        // Creating an ArrayList to store city names
+	        ArrayList<String> cities = new ArrayList<>();
+	        
+	        // Adding city names to the ArrayList
+	        cities.add("New York");
+	        cities.add("London");
+	        cities.add("Tokyo");
+	        cities.add("London");
+	        cities.add("Paris");
+	        cities.add("Sydney");
+	        cities.add("London");
+	        cities.add("New York");
+
+	        // Displaying the city names
+	        System.out.println("List of Cities:");
+	        for (String city : cities) {
+	            System.out.println(city);
+	        }
+	        System.out.println("--------------------------------");
+	     // Converting ArrayList to String using String.join() with a comma as delimiter
+	        String citiesString = String.join(", ", cities);
+	        for (String city : cities) {
+	           city.c
+	        }
+	    }
+}

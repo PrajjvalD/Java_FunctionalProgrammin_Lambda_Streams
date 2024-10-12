@@ -1,0 +1,49 @@
+package Exercises;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Exercise_004 {
+
+    public static void main(String[] args) {
+
+        List<Integer> numbers = List.of(12, 1, 4, 2, 7, 9, 3, 10, 77);
+
+        // Square every number and find the sum of squares
+        System.out.println("Sum of squares:");
+        int sqrSum = addSquareEachNumberListFunctional(numbers);
+        System.out.println(sqrSum);  // Output: 650
+
+        // Sum of all odd numbers in the list
+        System.out.println("Sum of odd numbers:");
+        int oddSum = addOddEachNumberListFunctional(numbers);
+        System.out.println(oddSum);  // Output: 90
+
+        // Convert distinct numbers to a single concatenated integer
+        System.out.println("Concatenated integer:");
+        Stream<Integer> sortNum = numbers.stream().distinct();
+        System.out.println(convertToInteger(sortNum));  // Output: 121427931077
+    }
+
+    // Convert Stream<Integer> to a single concatenated integer
+    private static Long convertToInteger(Stream<Integer> sortNum) {
+        String concatenated = sortNum
+                                .map(String::valueOf)  // Convert integers to strings
+                                .reduce("", String::concat);  // Concatenate all strings
+        return  Long.parseLong(concatenated);
+    }
+
+    // Sum of all odd numbers in the list
+    private static int addOddEachNumberListFunctional(List<Integer> numbers) {
+        return numbers.stream()
+                      .filter(x -> x % 2 != 0)  // Filter odd numbers
+                      .reduce(0, Integer::sum);  // Sum the odd numbers
+    }
+
+    // Square each number in the list and return the sum of squares
+    public static int addSquareEachNumberListFunctional(List<Integer> numbers) {
+        return numbers.stream()
+                      .map(x -> x * x)  // Square each number
+                      .reduce(0, Integer::sum);  // Sum the squares
+    }
+}

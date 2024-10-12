@@ -1,0 +1,19 @@
+package Exercises;
+
+import java.util.List;
+
+public class ExerciseThree {
+
+	public static void main(String[] args) {	
+		List<String> courses = List.of("Spring","Spring Boot","API","Microservices","AWS","PCF","Azure","Docker","Kubernetes");
+		// Print all courses individually
+		System.out.println("Print all courses individually");
+		courses.stream().forEach(System.out::println);
+		// Print courses containing the word Spring
+		System.out.println("Print courses containing the word Spring");
+		courses.stream().filter(course -> course.contains("Spring")).forEach(System.out::println);
+
+	}
+
+	
+}

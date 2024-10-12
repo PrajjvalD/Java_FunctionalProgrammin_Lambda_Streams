@@ -1,0 +1,14 @@
+package Exercises;
+
+import java.util.List;
+
+public class ExerciseOne {
+
+	public static void main(String[] args) {
+		// Print only odd numbers from list
+		List<Integer> lists = List.of(1,4,2,7,9,3,10,77);
+		lists.stream().filter(list -> list%2 != 0).forEach(System.out::println);
+	}
+
+	
+}

@@ -1,0 +1,16 @@
+package Exercises;
+
+import java.util.List;
+
+public class Exercise_004 {
+
+	public static void main(String[] args) {
+
+		List<Integer> lists = List.of(1,4,2,7,9,3,10,77);
+		// Square every number in a list and find the sum of squares
+		System.out.println("Square every number in a list and find the sum of squares");
+		
+			}
+
+	
+}
